@@ -2,35 +2,30 @@ import smtplib
 
 class mail(object):
 
-    def __init__(self, sender, content, receiver):
+    def __init__(self, sender, content):
         self.sender = sender
         self.content = content
-        self.receiver = receiver
+
+	def import_email_list(self, filepath):
+        self.receiver = open(filepath).read().splitlines()
         
     def send(self):
         mail = smtplib.SMTP('smtp.gmail.com',587)
         mail.starttls()
         mail.ehlo()
         mail.login(self.sender[0],self.sender[1])
+        
         for receiver in self.receiver:
-            mail.sendmail(self.sender[0],receiver,self.content)
+            mail.sendmail(self.sender[0], receiver, self.content)
             
 
-sender = ['mail_address', 'address_pass']
-content = 'content'
-receiver = ['1@example.com', '2@example.com']
-sendMail = mail(sender, content, receiver)
-sendMail.send()
+            
 
-    
+sender = ['hello_kitty@python.org', 'Th1s1sThePassW0Rd']
 
-#content = 'this mail sended with python'#mail.starttls()
-#mail.ehlo()
+content = 'This is a Test Mail - sent from a tiny Python script.'
 
-#fromAddr = 'mail_Address'
-#fromAddrPass = 'mail_Pass'
-#toAddrs = ['mail1@blabla.com', 'mail2@blabla.com', 'mail3@blabla.com']
+mailer = mail(sender, content)
 
-#mail.login(fromAddr, fromAddrPass)
-#for toAddr in toAddrs:
-#    mail.sendmail(fromAddr, toAddr, content)
+mailer.import_email_list('email_list.txt')
+mailer.send()
