@@ -17,7 +17,7 @@ class mail(object):
         for receiver in self.receiver:
 	    try:
             	mail.sendmail(self.sender['email'], receiver, self.content)
-	    catch:
+	    except:
 		print('Sending mail to address ' + receiver + ' was unsuccessful')
 		
 		
