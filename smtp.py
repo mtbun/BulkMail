@@ -16,8 +16,10 @@ class mail(object):
         mail.login(self.sender['email'],self.sender['password'])
         
         for receiver in self.receiver:
-            mail.sendmail(self.sender['email'], receiver, self.content)
-
+	    try:
+            	mail.sendmail(self.sender['email'], receiver, self.content)
+	    catch:
+		print('Sending mail to address ' + receiver + ' was unsuccessful')
 
 
 sender = {
