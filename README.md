@@ -1,5 +1,4 @@
-# Bulk mails - Youtube
+# Bulk mails
 Sending bulk mails from a list with Python.
 \
 \
-_Repository of Youtube tutorial_
