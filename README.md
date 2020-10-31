@@ -2,4 +2,4 @@
 Sending bulk mails from a list with Python.
 \
 \
-_Repository of Youtube tutorial _
+_Repository of Youtube tutorial_
