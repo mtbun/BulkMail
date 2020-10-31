@@ -12,7 +12,7 @@ pip3 install smtp
 ```
 git clone https://github.com/mtbun/mail.git
 ```
-3. Edit tsender on line 23 in the smtp.py
+3. Edit sender on line 23 in the smtp.py
    For example:
 ```
 sender = {
