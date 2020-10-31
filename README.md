@@ -1,2 +1,5 @@
-# mail
-send collective mail with python
+# Bulk mails - Youtube
+Sending bulk mails from a list with Python.
+\
+\
+_Repository of Youtube tutorial _
