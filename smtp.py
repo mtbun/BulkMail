@@ -13,15 +13,18 @@ class mail(object):
         mail = smtplib.SMTP('smtp.gmail.com',587)
         mail.starttls()
         mail.ehlo()
-        mail.login(self.sender[0],self.sender[1])
+        mail.login(self.sender['email'],self.sender['password'])
         
         for receiver in self.receiver:
-            mail.sendmail(self.sender[0], receiver, self.content)
+            mail.sendmail(self.sender['email'], receiver, self.content)
             
 
             
 
-sender = ['hello_kitty@python.org', 'Th1s1sThePassW0Rd']
+sender = {
+	'email': 'hello_kitty@python.org',
+	'password': 'Th1s1sThePassW0Rd'
+}
 
 content = 'This is a Test Mail - sent from a tiny Python script.'
 
