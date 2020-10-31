@@ -12,7 +12,7 @@ pip3 install smtp
 ```
 git clone https://github.com/mtbun/mail.git
 ```
-3. Edit sender on line 23 in the smtp.py
+3. Edit sender in the smtp.py
    For example:
 ```
 sender = {
@@ -20,8 +20,9 @@ sender = {
 	'password': 'Th1s1sThePassW0Rd'
 }
 ```
-4. Edit your email_list file and add the addresses you want to send mail to
-5. Run code
+4. Edit content in the smtp.py
+5. Edit your email_list file and add the addresses you want to send mail to
+6. Run code
 ```
 python3 smtp.py
 ```
