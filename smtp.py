@@ -10,16 +10,15 @@ class mail(object):
         self.receiver = open(filepath).read().splitlines()
         
     def send(self):
-        mail = smtplib.SMTP('smtp.gmail.com',587)
+        mail = smtplib.SMTP('smtp.gmail.com', 587)
         mail.starttls()
         mail.ehlo()
         mail.login(self.sender['email'],self.sender['password'])
         
         for receiver in self.receiver:
             mail.sendmail(self.sender['email'], receiver, self.content)
-            
 
-            
+
 
 sender = {
 	'email': 'hello_kitty@python.org',
